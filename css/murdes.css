@@ -1,0 +1,306 @@
+.Main{
+    width: 90%;
+    background-color: #2d2d2d; /*EMPEZAMOS CON EL MAIN Y EL ESTILO DE SU CONTENIDO */
+    margin: auto;
+    margin-top: 3.125rem;
+    margin-bottom: 3.125rem;
+}
+.Main-h2{
+    font-size: 1.875rem;
+    font-weight: 600;
+    color: rgb(198, 94, 94);
+}
+.Main-p{
+    width: 100%;
+    font-size: 1.0625rem;
+    color: rgba(255, 255, 255, 0.818);
+    margin-bottom: .625rem;
+}
+.Main-img{
+    margin-bottom: 20px;
+    border: ridge 5px black;
+}
+.Pop-up{          /* ACÁ TENEMOS EL POPUP AL CARGAR LA PAGINA*/
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.888);
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .4s ease;
+}
+.Pop-up.isVisible{
+    opacity: 1;
+    pointer-events: all;
+}
+.Popup-button{
+    width: 1.25rem;
+    background: transparent;
+    cursor: pointer;
+}
+.Popup-button:active{
+    transform: scale(1.2);
+}
+.Popup-content{
+    width: 18.75rem;
+    padding: .625rem;
+    background-color: white;
+    border: ridge .3125rem black;
+}
+.popup-h2{
+    width: 100%;
+    font-size: 1.25rem;
+    color: rgb(172, 45, 45);;
+    font-weight: 600;
+}
+.popup-p{
+    width: 100%;
+    padding-bottom: .3125rem;
+}
+.Linkens{       /* ACÁ YA ESTA EL CASO COMO TAL DE SYLVIA */
+    width: 100%;
+    padding: .625rem;
+    border: ridge .625rem rgb(255, 255, 255);
+}
+.Silvia{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: .625rem;
+}
+.Case{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: .625rem;
+    margin-bottom: 2.5rem;
+}
+.House{
+    width: 100%;
+}
+.Letter{
+    width: 50%;
+    color: white;
+}
+.Letter-img{
+    width: 35%;
+}
+.Card{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: .625rem;
+    font-size: 1.25rem;
+    padding: .625rem;
+}
+.Card-svg{
+    width: 2.1875rem;
+    color: rgb(198, 94, 94);
+    cursor: pointer;
+    transition: transform .3s ease;
+}
+.Card-svg:hover{
+    transform: scale(1.1);
+}
+.Card-lightbox{     /* ACÁ SE ENCUENTRA EL LIGHTBOX DE LA CARTA DE SYLVIA*/
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: .9375rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .5s ease;
+    background-color: rgba(0, 0, 0, 0.626);
+}
+.Card-lightbox.isVisible{
+    opacity: 1;
+    pointer-events: all;
+    z-index: 1;
+}
+.Close-btn{
+    width: 1.25rem;
+    cursor: pointer;
+    border-radius: .625rem;
+}
+.Close-btn:active{
+    transform: scale(1.1);
+}
+.Wrapper{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: .625rem;
+}
+.Warning{       /* ACÁ ESTAN LOS ESTILOS DE EL BOTÓN WARNING */
+    width: 9.375rem;
+    font-size: 1.5625rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: flex-end;
+    border-radius: .3125rem;
+    background: linear-gradient(146deg, #ffffff, #c7c7c7);
+    box-shadow:  .125rem .25rem .1875rem #545454,
+                 -0.3125rem -0.3125rem .375rem #161616;
+    padding: .3125rem;
+    margin-bottom: .9375rem;
+    cursor: pointer;
+}
+.Warning.isActive {
+    border-radius: .3125rem;
+    background: #d6d6d6;
+    box-shadow: inset .4375rem .4375rem .8125rem #767676,
+                inset -0.4375rem -0.4375rem .8125rem #ffffff;
+}
+.Warning.isActive .Warning-svg{ /* ACÁ SE VERÁN LAS IMAGENES */
+    color: red;
+}
+.Warning-svg{
+    width: 1.875rem;
+    color: black;
+    transition: color .3s ease;
+}
+.Warning:hover .Warning-svg{
+    color: red;
+}
+.Tortures-h2{
+    font-size: 2.1875rem;
+    font-weight: 600;
+    color: white;
+    transition: color .6s ease;
+}
+.Murder-h2{
+    width: 100%;
+    font-size: 1.875rem;
+    font-weight: 600;
+    margin-bottom: .625rem;
+    color: rgb(198, 94, 94);
+}
+.Murder{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: .625rem;
+}
+.Murder-img{
+    width: 100%;
+    margin-bottom: .625rem;
+    border: ridge .3125rem black;
+}
+.Gertrude-h3{
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    color: rgb(198, 94, 94);
+}
+.Gertrude1{
+    width: 100%;
+}
+.Images{  /* ACÁ SE ENCUENTRAN LAS IMAGENES DE TORRURAS  */
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    align-items: center;
+    gap: .3125rem;
+    background-color: rgba(255, 255, 255, 0.787);
+    margin-bottom: 1.25rem;
+    padding: 0 .3125rem;
+    transition: height .5s ease;
+}
+.Images.isVisible{
+    height: 64vh;
+}
+.Torture-img{
+    border: .0625rem solid rgb(106, 106, 106);
+}
+.Images1{
+    width: 50%;
+    margin: auto;
+    animation: translate 6s ease both;
+}
+@keyframes translate{ /*ACÁ ESTA EL @KEYFRAME DE LA ÚLTIMA IMAGEN  */
+    from{
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+@media(max-width: 950px){ /* ACA SE ENCUENTRAN LOS @MEDIA O BREAKPOINTS*/
+    .Main-img{
+        width: 100%;
+    }
+    .Main-span{
+        font-size: .625rem;
+    }
+    .Images.isVisible{
+        height: 40vh;
+    }
+    .Murder{
+        flex-direction: column;
+    }
+    .Murder-h2{
+        text-align: center;
+    }
+    .Letter-img{
+        width: 50%;
+    }
+}
+@media(max-width: 606px){
+    .Case{
+        flex-direction: column;
+    }
+    .Murder{
+        flex-direction: column;
+   }
+    .Murder-img{
+        width: 100%;
+    }
+    .Tortures-h2{
+        font-size: 1.5rem;
+    }
+    .Warning{
+        width: 7.5rem;
+        font-size: 1.25rem;
+        margin-bottom: .625rem;
+    }
+    .Warning-svg{
+        width: 1.5625rem;
+    }
+    .Letter-img{
+        width: 90%;
+    }
+    .Letter{
+        width: 100%;
+    }
+    .Main-h2{
+        font-size: 1.25rem;
+    }
+    .Images.isVisible{
+        height: 20vh;
+    }
+}

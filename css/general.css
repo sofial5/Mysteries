@@ -1,0 +1,231 @@
+.Header{
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: ridge 5px rgb(225, 225, 225);
+    background-color: #2d2d2d;
+}
+.Header-h1{
+    width: 300px;
+    transition: all .7s ease;
+    background-color: transparent;
+    animation: bajar 1s 1 ease both;
+}
+.Header-svg{
+    width: 28px;
+    fill: white;
+    transition: all .3s ease;
+}
+.Header-button{
+    background-color: transparent;
+    cursor: pointer;
+    opacity: 0;
+}
+.Nav-button{
+    background-color: transparent;
+    cursor: pointer;
+    opacity: 0;
+}
+.Header-svg:hover{
+    transform: scale(0.9);
+    fill: rgb(201, 201, 201);
+}
+.Nav{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.Nav-svg{
+    width: 25px;
+}
+@keyframes bajar{
+    from{
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(8%);
+        opacity: 1;
+    }
+}
+.Nav-ul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    gap: 30px;
+}
+.Nav-li{
+    color: white;
+    transition: color .9s ease;
+}
+.Nav-li:hover{
+    color: rgba(253, 115, 115, 0.385);
+}
+.Nav-li.isActive{
+    color: rgb(151, 151, 151);
+}
+.Footer{
+    width: 100%;
+    min-height: 12.5rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #2d2d2d;
+    border-top: ridge 5px rgb(225, 225, 225);
+}
+.Logo{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: .625rem;
+}
+.Rights{
+    color: white;
+    gap: .625rem;
+}
+.Rigths-h3{
+    margin-top: 1.25rem;
+}
+.Footer-img{
+    width: 9.375rem;
+    border-radius: .3125rem;
+    margin: auto;
+}
+.Footer-a{
+    color: white;
+}
+.Page-links{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.875rem;
+}
+.Page-a{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: .3125rem;
+    color: white;
+    transition: color .9s ease;
+}
+.Page-a:hover{
+    color: rgba(253, 115, 115, 0.385);
+}
+.Footer-svg{
+    width: 1.5625rem;
+    color: white;
+    transition: all .9s ease;
+}
+.Footer-svg:hover{
+    color: rgba(253, 115, 115, 0.385);
+    transform: scale(1.2);
+}
+.Footer-svg1{
+    width: .9375rem;
+    color: white;
+}
+.Links{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
+.Footer-ul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1.25rem;
+}
+.Location{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    color: white;
+    gap: .625rem;
+}
+@media(max-width: 996px){
+    .Nav{
+        width: 80%;
+        height: 0;
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-start;
+        align-items: flex-end;
+        gap: 1.875rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #2d2d2d;
+        padding-top: 3.4375rem;
+        padding-right: .9375rem;
+        box-shadow:  0 .125rem .625rem 100vmax rgba(48, 48, 48, .6);
+        opacity: 0;
+        pointer-events: none;
+        z-index: 1;
+        transition: all .5s ease;
+        visibility: hidden;
+    }
+    .Nav.isActive {
+        height: 100%;
+        opacity: 1;
+        z-index: 2;
+        pointer-events: auto;
+        visibility: visible;
+    }
+    .Header-button, .Nav-button{
+        opacity: 1;
+        cursor: pointer;
+    }
+    .Nav-ul{
+        flex-direction: column;
+        padding-right: 2.5rem;
+    }
+    .Page-links{
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+}
+@media(max-width: 580px){
+    .Header-h1{
+        width: 180px;
+    }
+    .Footer-img{
+        width: 8.125rem;
+        margin-bottom: 1.875rem;
+    }
+    .Logo{
+        width: 100%;
+        padding: 1.25rem;
+    }
+    .Rigths-h3{
+        font-size: .7188rem;
+    }
+    .Page-a{
+        font-size: .7188rem;
+    }
+    .Footer-svg{
+        width: 1.0625rem;
+    }
+    .Location{
+        font-size: .7188rem;
+    }
+    .Links{
+        gap: 3.75rem;
+    }
+}

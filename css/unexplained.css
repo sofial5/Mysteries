@@ -1,0 +1,378 @@
+.Main{
+    width: 100%; /* ACÁ TENEMOS EL MAIN QUE TIENE TODO LO DE LA PAGINA */
+    margin-top: 2.5rem;
+    overflow: hidden;
+}
+.Text{
+    background:#2d2d2d;  /* ACÁ ESTA EL CONTENEDOR DEL TEXTO PRINCIPAL */
+    width: 30%;
+    margin: auto;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-family: sans-serif;
+    margin-bottom: 1.25rem;
+}
+.Main-h2{       /* ACÁ ESTA EL TEXTO PRINCIPAL DE LA PAGINA, AGREGADO DE SOMBRAS PARA EL EFECTO DE MOVIMIENTO */
+  font-size: xx-large;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 
+  0.05em 0 0 rgba(255,0, 0, .75),
+  -0.025em -0.05em 0 rgba(0,255, 0, .75),
+  0.025em 0.05em 0 rgba(0,0, 255, .75);
+  position: relative;
+  animation: Main-h2 .2s infinite;
+}
+.Main-h2 span{    /* LOS SPAN QUE SE CREARON SE COLOCAN EN POSITION ABSOLUTE PARA POSICIONARSE CON EL TEXTO PRINCIPAL */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.Main-h2 span:first-child{      /* ACÁ LLAMAMOS AL PRIMER SPAN Y CREARLE EL EFECTO CON UN CLIP-PATH DE POLYGONO Y UTILIZAR CON UN TRANSLATE*/
+    animation: Main-h2 650ms infinite;
+    clip-path: polygon(0 0,100% 0, 100% 45%, 0 45%);
+    transform: translate(-0.05em, -0.025em);
+    opacity: 0.8;
+}
+.Main-h2 span:last-child{       /* ACÁ LLAMAMOS AL SEGUNDO SPAN Y CREARLE EL EFECTO CON UN CLIP-PATH DE POLYGONO Y UTILIZAR CON UN TRANSLATE*/
+    animation: Main-h2 375ms infinite;
+    clip-path: polygon(0 80%,100% 20%, 100% 100%, 0 100%);
+    transform: translate(0.0125em, 0.025em);
+    opacity: 0.8;
+}
+@keyframes Main-h2{     /*  AQUÍ YA CREAMOS EL @KEYFRAMES PARA LA ANIMACIÓN, LA ANIMACION SE APLICA A EL H2 PRINCIPAL*/
+    0%{
+        text-shadow: 
+        0.05em 0 0 rgba(255,0, 0, .75),
+        -0.025em -0.05em 0 rgba(0,255, 0, .75), /* ACÁ YA CREAMOS EN DONDE QUEREMOS QUE SE POSICIONEN LOS COLORES CON DIFERENTEW % Y HAGA LA ANIMACION DE MANERA INFINITA */
+        0.025em 0.05em 0 rgba(0,0, 255, .75); 
+    }
+    14%{
+        text-shadow: 
+        0.05em 0 0 rgba(255,0, 0, .75),
+        -0.025em -0.05em 0 rgba(0,255, 0, .75), 
+        0.025em 0.05em 0 rgba(0,0, 255, .75); 
+    }
+    15%{
+        text-shadow: 
+        -0.05em -0.025em 0 rgba(255,0, 0, .75),
+        0.025em 0.025em 0 rgba(0,255, 0, .75),
+        -0.05em -0.05em 0 rgba(0,0, 255, .75);
+    }
+    49%{
+        text-shadow: 
+        -0.05em -0.025em 0 rgba(255,0, 0, .75),
+        0.025em 0.025em 0 rgba(0,255, 0, .75),
+        -0.05em -0.05em 0 rgba(0,0, 255, .75);
+    }
+    50%{
+        text-shadow: 
+        0.025em 0.05em 0 rgba(255,0, 0, .75),
+        0.05em 0 0 rgba(0,255, 0, .75),
+        0 -0.05em 0 rgba(0,0, 255, .75);
+    }
+    99%{
+        text-shadow: 
+        0.025em 0.05em 0 rgba(255,0, 0, .75),
+        0.05em 0 0 rgba(0,255, 0, .75),
+        0 -0.05em 0 rgba(0,0, 255, .75);
+    }
+    100%{
+        text-shadow: 
+        -0.205em 0 0 rgba(255,0, 0, .75),       /* HASTA TERMINAR CON EL 100%  */
+        -0.025em -0.025em 0 rgba(0,255, 0, .75),
+        -0.025em -0.05em 0 rgba(0,0, 255, .75);
+    }
+}
+.Article{       /* ACÁ EMPEZAMOS CON LOS ARTICLES Y SECTIONS RELACIONADOS*/
+    width: 95%;
+    background-color: #2d2d2d;
+    margin: auto;
+    margin-bottom: 1.25rem;
+    border: ridge 1.25rem;
+}
+.Article-h2{         /* ACÁ A LOS TITULOS PRINCIPALES LE AGREGO EL MISMO EFECTO*/
+    width: 100%;
+    font-weight: 400;
+    font-size: 2.5rem;
+    margin-bottom: .625rem;
+    position: relative;
+    text-shadow: 
+    0.05em 0 0 rgba(255,0, 0, .75),
+    -0.025em -0.05em 0 rgba(0,255, 0, .75),
+    0.025em 0.05em 0 rgba(0,0, 255, .75);
+    animation: Article-h2 .2s infinite;
+    color: white;
+    padding: .9375rem;
+}
+.Article-h2 span{       /* COLOCAMOS LOS SPAN EN ABOLUTE PATA POSICIONARSE CON EL H2 */
+    position: absolute;
+    top: .9375rem;
+    left: .9375rem;
+}
+.Article-h2 span:first-child{    /* LLAMAMOS AL PRIMER SPAN PARA AGREGARLE EL CLIP-PATH DE POLYGONO */
+    animation: Article-h2 650ms infinite;
+    z-index: 1;
+    clip-path: polygon(0 0,100% 0, 100% 45%, 0 45%);
+    transform: translate(-0.05em, -0.025em);
+    opacity: 0.8;
+}
+.Article-h2 span:last-child{    /*LLAMAMOS AL PRIMER SPAN PARA AGREGARLE EL CLIP-PATH DE POLYGONO */
+    animation: Article-h2 375ms infinite;
+    clip-path: polygon(0 80%,100% 20%, 100% 100%, 0 100%);
+    transform: translate(0.0125em, 0.025em);
+    z-index: 1;
+    opacity: 0.8;
+}
+@keyframes Article-h2{      /* AGREGAMOS EL MISMO @KEYFRAMES PARA LOS TÍTULOS DEL ARTICLE */
+    0%{
+        text-shadow: 
+        0.05em 0 0 rgba(255,0, 0, .75),
+        -0.025em -0.05em 0 rgba(0,255, 0, .75),
+        0.025em 0.05em 0 rgba(0,0, 255, .75); 
+    }
+    14%{
+        text-shadow: 
+        0.05em 0 0 rgba(255,0, 0, .75),
+        -0.025em -0.05em 0 rgba(0,255, 0, .75),
+        0.025em 0.05em 0 rgba(0,0, 255, .75); 
+    }
+    15%{
+        text-shadow: 
+        -0.05em -0.025em 0 rgba(255,0, 0, .75),
+        0.025em 0.025em 0 rgba(0,255, 0, .75),
+        -0.05em -0.05em 0 rgba(0,0, 255, .75);
+    }
+    49%{
+        text-shadow: 
+        -0.05em -0.025em 0 rgba(255,0, 0, .75),
+        0.025em 0.025em 0 rgba(0,255, 0, .75),
+        -0.05em -0.05em 0 rgba(0,0, 255, .75);
+    }
+    50%{
+        text-shadow: 
+        0.025em 0.05em 0 rgba(255,0, 0, .75),
+        0.05em 0 0 rgba(0,255, 0, .75),
+        0 -0.05em 0 rgba(0,0, 255, .75);
+    }
+    99%{
+        text-shadow: 
+        0.025em 0.05em 0 rgba(255,0, 0, .75),
+        0.05em 0 0 rgba(0,255, 0, .75),
+        0 -0.05em 0 rgba(0,0, 255, .75);
+    }
+    100%{
+        text-shadow: 
+        -0.205em 0 0 rgba(255,0, 0, .75),
+        -0.025em -0.025em 0 rgba(0,255, 0, .75),
+        -0.025em -0.05em 0 rgba(0,0, 255, .75);
+    }
+}
+.Article1{
+    width: 100%;
+    background-color: transparent;
+    margin: auto;
+    margin-bottom: 1.25rem;
+}
+.Wrapper1{
+    width: 100%;
+    display: flex;
+    flex-flow: row-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: .625rem;
+    margin-bottom: .625rem;
+}
+.Wrapper{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: .625rem;
+    margin-bottom: .625rem;
+}
+.Wrapper3{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: .625rem;
+    margin: 1.25rem .9375rem;
+    padding: .625rem;
+}
+.Wrapper3 .Article-h3{
+    display: flex;
+    flex-flow: row-reverse nowrap;
+}
+.Wrapper3 .Article-p{
+    display: flex;
+    flex-flow:  row-reverse nowrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: end;
+}
+.Imagenes{      /* ACÁ EMPEZAMOS A LAS IMAGENES DARLE EL ESTILO */
+    width: 100%;
+    display: flex;
+    flex-flow:row nowrap;
+    justify-content: center;
+    align-items: flex-end;
+}
+.Nombre{
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.Nombres-h2{
+    width: 100%;
+    gap: .625rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 570;
+    margin-top: .3125rem;
+    color:  rgb(198, 94, 94);
+}
+.Article-iframe{        /* ACÁ ESTAN LOS ESTILOS PARA LOS IFRAMES*/
+    width: 100%;
+    border: solid  .5rem rgb(141, 140, 140);
+    margin-left: .9375rem;
+    margin-right: .9375rem;
+}
+.Article-img{
+    width: 90%;
+    margin: auto;
+    background-color: rgba(189, 188, 188, 0.858);
+    border: ridge .5rem rgb(50, 50, 50);
+    object-fit: cover;
+    opacity: 0.1;
+    transition: all 2s ease;
+}
+.Article-img:hover{
+    opacity: 1;
+}
+.Wrapper2{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: .625rem;
+    margin: 1.25rem .9375rem;
+    padding: .625rem;
+}
+.Wrapper2--1{
+    border-bottom: 1px solid black;
+    padding: .625rem;
+}
+.Article-h3{
+    width: 100%;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color:  rgb(198, 94, 94);
+}
+.Article-p{
+    width: 100%;
+    font-size: large;
+    color: rgba(255, 255, 255, 0.807);
+    margin-bottom: 1.25rem;
+}
+.Pdf{       /*AGREGUE UN COMUNICADO OFICIAL Y ACA ESTA NICADO LOS WIDTH Y ESTILOS */
+    width: 97%;
+    margin-left: .9375rem;
+    margin-bottom: .9375rem;
+    transition: all .5s ease;
+    border-bottom: 1px solid black;
+    padding-bottom: 2.5rem;
+    padding: .9375rem;
+    color: white;
+}
+.Pdf-file{
+    max-width: 3.125rem;
+    margin-left: .9375rem;
+    cursor: pointer;
+}
+.Pdf:hover{
+    transform: scale(0.9);
+    color: rgb(198, 94, 94);;
+}
+.Pdf-lightbox{      /*EL LIGHTBOX DEL PDF */
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .5s ease;
+    z-index: 1;     /*POSICIONE EL Z-INDEX PARA EL LIGHTBOX */
+}
+.Pdf-lightbox.isVisible{
+    opacity: 1;
+    pointer-events: all;
+    z-index: 2;      /* ACÁ COLOQUE UN 2 Z-INDEX PARA QUE SE POSICIONE POR ENCIMA DE CUALQUIER COSA QUE PUEDA POSICIONARSE POR ENCIMA DE EL LIGHTBOX*/
+    background-color: rgba(0, 0, 0, 0.626);
+}
+.Pdf-button{        /* EL CLOSE BUTTON DEL LIGHTBOX */
+    cursor: pointer;
+    border: .125rem solid rgb(0, 0, 0);
+    border-radius: .625rem;
+    transition: all .5s ease;
+    color: rgb(0, 0, 0);
+}
+.Pdf-button:active{
+    transform: scale(1.1);
+}
+.Pdf-img{
+    width: 30%;
+    min-width: 25rem;
+    background-color: purple;
+}
+@media(max-width:1313px){       /* Y ACA FINALIZAMOS CON EL @MEDIA DE LA PAGINA*/
+    .Text{
+        width: 33%;
+    }
+}
+@media(max-width:1100px){
+    .Text{
+        width: 40%;
+    }
+}
+@media(max-width:1050px){
+    .Text{
+        width: 45%;
+        text-align: center;
+    }
+}
+@media(max-width:950px){
+    .Text{
+        width: 50%;
+    }
+    .Wrapper{
+        flex-direction: column;
+    }
+    .Wrapper1{
+        flex-direction: column;
+    }
+}
+@media(max-width:860px){
+    .Text{
+        width: 75%;
+    }
+}
+@media(max-width: 540px){
+    .Imagenes{
+        flex-direction: column;
+    }
+    .Pdf-img{
+        width: 90%;
+        
+    }
+}

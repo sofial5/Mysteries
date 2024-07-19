@@ -1,0 +1,221 @@
+.Main{      /*  ACA TENGO LO QUE COMFORMA EL CONTENIDO DE LA PÁGINA*/
+    width: 90%;
+    margin: auto;
+    margin-top: 3.125rem;
+    margin-bottom: 3.125rem;
+    gap: .625rem;
+}
+.Text{      /* ACA ESTA EL TÍTULO PRINCIPAL DE LA PÁGINA */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    position: relative;
+    margin-bottom: 1.25rem;
+}
+.Main-h2{   /* COLOCAMOS EL PRIMERO EN ABSOLUTE PARA EL EFECTO*/
+    position: absolute;
+    color: rgb(118, 25, 25);
+    animation: Main-h21 2s ease-in-out infinite;
+}
+.Main-h21{      /*  EL DE POR ENCIMA LE AGREGRO ESTILOS */
+    color: rgb(0, 0, 0);
+    text-shadow: -1px -1px 0 white,
+    1px -1px 0 white,
+    1px 1px 0 white
+    -1px 1px 0 white
+}
+@keyframes Main-h21{    /* ACA HACEMOS EL MISMO EFECTO DE POLYGONO*/
+    0% , 100%{
+        clip-path: polygon( /* CON ESTOS DIFERENTES VENTORES PARA CREAR UN EFECTO DE OLAS */
+            0% 57%,
+            8% 48%,
+            33% 54%,
+            54% 68%,
+            70% 61%,
+            84% 59%,
+            100% 42%,
+            100% 100%,
+            0% 100%
+        );
+    }
+    50%{
+        clip-path: polygon( /* ACA AL 50% DEL TEXTO PARA LA SINCRONIZACION DEL MOVIMIENTO */
+            0% 60%,
+            15% 65%,
+            34% 68%,
+            51% 62%,
+            67% 50%,
+            82% 40%,
+            100% 46%,
+            100% 100%,
+            0% 100%
+        );
+    }
+}
+.Timeline{   /* ACA YA SE CREA LA PARTE VISIBLE DEL MAIN */
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-weight: 600;
+    font-size: x-large;
+    border: ridge .375rem rgb(255, 255, 255);
+    background: linear-gradient(145deg, #807f7f, #939292);
+    box-shadow:  .5625rem .5625rem .625rem #ffffff,
+                -0.5625rem -0.5625rem .625rem #363636;
+    background-image:  url(../assets/hotel.jpg);
+}
+.Timeline1{
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-weight: 600;
+    font-size: x-large;
+    border-radius: 0px;
+    border: ridge .375rem rgb(255, 255, 255);
+    background: linear-gradient(145deg, #807f7f, #939292);
+    box-shadow:  .5625rem .5625rem .625rem #ffffff,
+                -0.5625rem -0.5625rem .625rem #363636;
+    background-image: url(../assets/flight370.jpg);
+}
+.Timeline2{
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-weight: 600;
+    font-size: x-large;
+    border: ridge .375rem rgb(255, 255, 255);
+    background: linear-gradient(145deg, #807f7f, #939292);
+    box-shadow:  .5625rem .5625rem .625rem #ffffff,
+                -0.5625rem -0.5625rem .625rem #363636;
+    background-image: url(../assets/sodder.png);
+}
+.Timeline-date{
+    margin-left: .4375rem;
+    color:  rgb(255, 255, 255);
+    font-size: 1.875rem;
+}
+.Timeline-img{
+    width: 30%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: all .6s ease;
+    border-left: ridge .375rem rgb(255, 255, 255);
+}
+.Timeline-img:hover{
+    transform: scale(1.1);
+}
+.Section{   /* ACA EN EL SECTION ESTA LA AGRUPACION DEL CONTENIDO*/
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    background-color: #2d2d2d;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    transition: all .5s ease;
+    border: ridge .375rem rgb(255, 255, 255);
+    margin-bottom: 1.25rem;
+}
+.Section.isVisible{
+    height: 100vh;
+    pointer-events: auto;
+    opacity: 1;
+}
+.Section-img{
+    border: ridge 10px;
+}
+.Event{         /* EL EVENT ES EL CONTENIDO DEL CASO QUE LLEVARA ADENTRO*/
+    width: 100%;
+    padding: .625rem;
+}
+.Event-h2{
+    width: 100%;
+    font-size: 1.875rem;
+    font-weight: 600;
+    margin-bottom: .625rem;
+    color:  rgb(198, 94, 94);
+}
+.Event-p{
+    font-size: 1.0625rem;
+    margin-bottom: .625rem;
+    color: rgba(255, 255, 255, 0.811);
+}
+.Image-h2{
+    font-size: 1.5625rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: .375rem;
+    color:  rgb(198, 94, 94);
+}
+.Map{      
+    width: 100%;
+    padding: .625rem;
+}
+.Map-h2{
+    width: 100%;
+    font-size: 1.875rem;
+    font-weight: 600;
+    margin-bottom: .625rem;
+    color:  rgb(198, 94, 94);
+}
+.Map-iframe{    /* ACA ESTA EL ESTILO DE IFRAME DEL MAPA AGREGADO*/
+    width: 100%;
+}
+.Map-p{
+    font-size: 1.0625rem;
+    margin-top: .625rem;
+    color: rgba(255, 255, 255, 0.811);
+}
+@media(max-width: 640px){   /* ACA ESTÁN UBICADOS POR @MEDIA */
+    .Text{
+        font-size: 1.875rem;
+        margin: auto;
+        margin-bottom: .9375rem;
+    }
+}
+@media(max-width: 540px){
+    .Timeline-date{
+        font-size: 17px;
+    }
+    .Text{
+        font-size: 1.625rem;
+        margin: auto;
+        margin-bottom: .9375rem;
+    }
+    .Section.isVisible{
+        height: inherit;
+        flex-direction: column;
+    }
+}
+@media(max-width: 1490px){
+    .Section.isVisible{
+        height: 115vh;
+    }
+}
+@media(max-width: 1070px){
+    .Section.isVisible{
+        flex-direction: column;
+        height: inherit;
+    }
+    .Map-iframe{
+        margin: auto;
+    }
+}
